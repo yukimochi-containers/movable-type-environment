@@ -1,0 +1,27 @@
+version: '3'
+services:
+
+  mt:
+    build: .
+    image: yukimochi/movable-type-deployment
+    restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./html:/html
+      - ./html/mt-static:/mt/mt-static
+    depends_on:
+      - mt-sql
+
+  mt-sql:
+    image: mariadb
+    restart: always
+    ports:
+      - "3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - MYSQL_DATABASE=mt
+      - MYSQL_USER=mt_user
+      - MYSQL_PASSWORD=p@ssw0rd
