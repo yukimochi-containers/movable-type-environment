@@ -10,6 +10,7 @@ services:
     volumes:
       - ./html:/html
       - ./html/mt-static:/mt/mt-static
+    command : starman mt.psgi
     depends_on:
       - mt-sql
 

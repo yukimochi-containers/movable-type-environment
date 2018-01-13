@@ -103,7 +103,7 @@ RUN yum install -y -q expat-devel \
     perl-Variable-Magic \
     unzip && \
     yum clean -q all
-RUN cpanm Task::Plack && \
+RUN cpanm -q Task::Plack && \
     rm -rf .cpanm/*
 RUN yum install -y -q mariadb-devel \
     perl-Authen-SASL \
@@ -114,7 +114,7 @@ RUN yum install -y -q mariadb-devel \
     perl-IPC-Run \
     perl-XML-LibXML \
     perl-YAML-Syck && \
-    cpanm Cache::File \
+    cpanm -q Cache::File \
     Cache::Memcached \
     Crypt::DSA \
     Image::Size \
