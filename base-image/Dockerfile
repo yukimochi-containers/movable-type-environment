@@ -18,6 +18,7 @@ RUN yum install -y -q expat-devel \
     yum clean -q all
 RUN cpanm -q Test::Simple && \
     cpanm -q Moose && \
+    cpanm -q Test::TCP && \
     cpanm -q Task::Plack && \
     cpanm -q Authen::SASL \
     Cache::File \
