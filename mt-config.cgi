@@ -8,3 +8,4 @@ DBPassword p@ssw0rd
 DBHost mt-sql
 
 DefaultLanguage en_US
+ImageDriver GD
