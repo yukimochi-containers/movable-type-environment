@@ -4,4 +4,4 @@ pipeline:
     image: plugins/docker
     repo: yukimochi/movable-type-environment
     secrets: [ docker_username, docker_password ]
-    tags: alpha
+    tags: latest
